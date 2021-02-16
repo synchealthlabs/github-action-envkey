@@ -6,7 +6,9 @@ async function run(): Promise<void> {
     const ENVKEY = process.env.ENVKEY
     const env = await getEnvVars({ envKey: ENVKEY })
     Object.keys(env).forEach((key) => {
-      core.setSecret(env[key])
+      if (key !== 'ENVKEYS') {
+        core.setSecret(env[key])
+      }
       core.exportVariable(key, env[key])
     })
   } catch (ex) {
