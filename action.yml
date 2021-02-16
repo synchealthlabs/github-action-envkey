@@ -1,0 +1,9 @@
+name: synchealthlabs/github-action-envkey
+description: Set Github Action Environment Variables from ENVKEY
+author: Sync Health Labs
+branding:
+  icon: 'lock'  
+  color: 'red'
+runs:
+  using: node12
+  main: dist/main/index.js
